@@ -20,7 +20,7 @@ export const LoginPage = () => {
     const results = async () => {
       setTest(true);
       const results = await fetch(
-        `http://localhost:8888/users/login`,
+        `http://localhost:8888/api/users/login`,
         {
           method: 'POST',
           headers: {

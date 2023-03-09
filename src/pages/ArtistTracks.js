@@ -64,7 +64,6 @@ export const ArtistTracks = props => {
 
   const playSound = async song => {
     // setTrackUri([song.uri]);
-    console.log(trackUri, 'trackuri console');
 
     const deviceId = '81b90fca98cab60d07fb0733902198ac8cf054ac';
     console.log(song, 'songsURI');

@@ -74,7 +74,9 @@ export const AuthProvider = ({ children }) => {
     [userToken]
   );
   return (
-    <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 
@@ -84,7 +86,7 @@ export const useAuth = () => {
 
 const registerUser = async (email, password) => {
   //   const urlEndpoint = process.env.REACT_APP_URL_ENDPOINT;  // not working
-  const url = `http://localhost:8888/users/register`;
+  const url = `http://localhost:8888/api/users/register`;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -101,7 +103,7 @@ const registerUser = async (email, password) => {
 
 const loginUser = async (email, password) => {
   //   const urlEndpoint = process.env.REACT_APP_URL_ENDPOINT; // not working
-  const url = `http://localhost:8888/users/login`;
+  const url = `http://localhost:8888/api/users/login`;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -121,7 +123,9 @@ const setLSUserData = (token, email) => {
 };
 
 const removeLSUserData = () => {
-  localStorage.removeItem(process.env.REACT_APP_TOKEN_HEADER_KEY);
+  localStorage.removeItem(
+    process.env.REACT_APP_TOKEN_HEADER_KEY
+  );
   return true;
 };
 

@@ -8,13 +8,16 @@ export const NavBar = props => {
   const { playlistId, snapshot_id } = props;
   const nav = useNavigate();
   const getToken = localStorage.getItem('token');
+  const baseURL = process.env.REACT_APP_URL_ENDPOINT;
+  console.log(baseURL);
+  const apiLogin = baseURL + '/login';
   return (
     <div className='nav-bar'>
       <Link to='/'>Home</Link>
       <br></br>
       <Link to='/login'>Login Page</Link>
       <br></br>
-      <a href='http://localhost:8888/login'> get token</a>
+      <a href={apiLogin}> get token</a>
       <Link to='/register'>Registration</Link>
       <br></br>
 
