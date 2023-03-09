@@ -85,8 +85,8 @@ export const useAuth = () => {
 };
 
 const registerUser = async (email, password) => {
-  //   const urlEndpoint = process.env.REACT_APP_URL_ENDPOINT;  // not working
-  const url = `http://localhost:8888/api/users/register`;
+  const urlEndpoint = process.env.REACT_APP_URL_ENDPOINT; // not working
+  const url = `${urlEndpoint}/users/register`;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
