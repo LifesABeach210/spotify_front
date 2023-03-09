@@ -20,7 +20,7 @@ export const LoginPage = () => {
     const results = async () => {
       setTest(true);
       const results = await fetch(
-        `http://localhost:8888/api/users/login`,
+        `${process.env.REACT_APP_URL_ENDPOINT}/api/users/login`,
         {
           method: 'POST',
           headers: {

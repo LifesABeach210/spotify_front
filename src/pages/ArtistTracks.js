@@ -28,7 +28,7 @@ export const ArtistTracks = props => {
     };
 
     const response = await fetch(
-      `http://localhost:8888/playlist/create-playlist`,
+      `${process.env.REACT_APP_URL_ENDPOINT}/playlist/create-playlist`,
       {
         method: 'POST',
         headers: {

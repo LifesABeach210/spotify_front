@@ -8,7 +8,7 @@ export const NavBar = props => {
   const { playlistId, snapshot_id } = props;
   const nav = useNavigate();
   const getToken = localStorage.getItem('token');
-  const baseURL = process.env.REACT_APP_URL_ENDPOINT;
+  const baseURL = [process.env.REACT_APP_URL_ENDPOINT];
   console.log(baseURL);
   const apiLogin = baseURL + '/login';
   return (

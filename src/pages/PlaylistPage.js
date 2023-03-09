@@ -9,7 +9,7 @@ export const PlaylistPage = props => {
   //   useEffect(() => {
   //     const create_playlist = async data => {
   //       await fetch(
-  //         `http://localhost:8888/playlist/create-playlist`,
+  //         `${process.env.REACT_APP_URL_ENDPOINT}/playlist/create-playlist`,
   //         {
   //           method: 'POST',
   //           headers: {

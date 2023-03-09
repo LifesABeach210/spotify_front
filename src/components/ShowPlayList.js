@@ -9,14 +9,17 @@ export const ShowPlayList = props => {
 
   const { tokenJWT, setPlaylistItems } = props;
   const get_all_playlist = async () => {
-    await fetch(`http://localhost:8888/playlist/get-playlist`, {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        'content-type': 'application/json',
-        authorization: tokenJWT,
-      },
-    })
+    await fetch(
+      `${process.env.REACT_APP_URL_ENDPOINT}/playlist/get-playlist`,
+      {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+          authorization: tokenJWT,
+        },
+      }
+    )
       .then(res => res.json())
       .then(data => {
         setShowPlayList(data.message.playlist);
